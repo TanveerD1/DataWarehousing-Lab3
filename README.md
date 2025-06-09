@@ -29,8 +29,8 @@ To run this project and observe the extraction processes:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/YourUsername/ETL_Extract](https://github.com/YourUsername/ETL_Extract)_<YourFullName>_<StudentID>.git
-    cd ETL_Extract_<YourFullName>_<StudentID>
+    [git clone [https://github.com/YourUsername/ETL_Extract](https://github.com/YourUsername/ETL_Extract)_<YourFullName>_<StudentID>.git
+    cd ETL_Extract_<YourFullName>_<StudentID>](https://github.com/TanveerD1/DataWarehousing-Lab3.git)
     ```
 2.  **Generate Data:**
     Ensure you have the `generate_data.py` script (provided separately or from previous steps). Run it to create the `custom_data.csv` file:
