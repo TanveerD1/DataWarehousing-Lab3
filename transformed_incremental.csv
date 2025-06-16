@@ -1,0 +1,34 @@
+transaction_id,transaction_date,transaction_timestamp,customer,category,quantity,amount,total_price,payment_type,status
+353,2025-06-15,2025-06-15 04:08:57,Costco,Books,5,1621.91,8109.55,Bank Transfer,Pending
+354,2025-06-16,2025-06-16 20:11:05,Costco,Books,2,432.92,865.84,Debit Card,Cancelled
+355,2025-06-17,2025-06-17 03:46:57,Amazon,Tools,7,876.54,6135.78,Debit Card,Completed
+356,2025-06-18,2025-06-18 13:03:27,Amazon,Books,5,1435.31,7176.549999999999,Credit Card,Completed
+357,2025-06-19,2025-06-19 15:37:21,Google,Home Goods,3,39.0,117.0,Bank Transfer,Pending
+358,2025-06-20,2025-06-20 03:05:25,Target,Electronics,3,1987.26,5961.78,PayPal,Cancelled
+359,2025-06-21,2025-06-21 19:45:24,Amazon,Groceries,2,1267.45,2534.9,Bank Transfer,Cancelled
+360,2025-06-22,2025-06-22 17:12:33,Amazon,Sports,4,470.82,1883.28,Credit Card,Completed
+361,2025-06-23,2025-06-23 15:17:18,Apple,Apparel,5,1109.48,5547.4,Debit Card,Completed
+362,2025-06-24,2025-06-24 22:28:45,Walmart,Electronics,8,1365.46,10923.68,Credit Card,Completed
+363,2025-06-25,2025-06-25 21:31:39,Microsoft,Electronics,4,37.76,151.04,Debit Card,Pending
+364,2025-06-26,2025-06-26 20:07:37,Target,Books,10,677.12,6771.2,Credit Card,Pending
+365,2025-06-27,2025-06-27 19:24:01,Microsoft,Tools,9,1089.08,9801.72,Debit Card,Pending
+366,2025-06-28,2025-06-28 15:50:07,BestBuy,Electronics,4,78.17,312.68,Debit Card,Cancelled
+367,2025-06-29,2025-06-29 21:59:38,Microsoft,Books,6,1226.59,7359.539999999999,Debit Card,Cancelled
+368,2025-06-30,2025-06-30 23:54:30,Google,Home Goods,3,567.1,1701.3000000000002,Debit Card,Pending
+382,2025-06-14,2025-06-14 19:54:56,Microsoft,Tools,4,1986.63,7946.52,Credit Card,Cancelled
+383,2025-06-15,2025-06-15 07:08:40,eBay,Books,8,501.46,4011.68,Credit Card,Pending
+384,2025-06-16,2025-06-16 10:15:40,Walmart,Tools,2,1210.43,2420.86,Debit Card,Pending
+385,2025-06-17,2025-06-17 07:25:01,Target,Tools,2,1985.3,3970.6,PayPal,Pending
+386,2025-06-18,2025-06-18 14:26:36,Microsoft,Software,8,190.16,1521.28,PayPal,Cancelled
+387,2025-06-19,2025-06-19 00:25:27,Costco,Sports,10,777.26,7772.6,Debit Card,Pending
+388,2025-06-20,2025-06-20 20:41:51,BestBuy,Tools,4,1884.45,7537.8,PayPal,Cancelled
+389,2025-06-21,2025-06-21 18:45:10,Target,Groceries,8,354.48,2835.84,PayPal,Completed
+390,2025-06-22,2025-06-22 21:26:51,Amazon,Home Goods,7,1959.05,13713.35,Bank Transfer,Refunded
+391,2025-06-23,2025-06-23 23:39:56,Google,Books,5,425.77,2128.85,Credit Card,Cancelled
+392,2025-06-24,2025-06-24 03:13:27,Amazon,Tools,5,96.87,484.35,PayPal,Pending
+393,2025-06-25,2025-06-25 06:22:32,Costco,Groceries,4,583.03,2332.12,PayPal,Cancelled
+394,2025-06-26,2025-06-26 01:37:57,Amazon,Software,8,388.62,3108.96,Credit Card,Pending
+395,2025-06-27,2025-06-27 18:50:47,Google,Apparel,6,1863.88,11183.28,Credit Card,Pending
+396,2025-06-28,2025-06-28 01:52:49,Apple,Sports,8,1671.47,13371.76,PayPal,Completed
+397,2025-06-29,2025-06-29 21:47:06,BestBuy,Electronics,1,1120.95,1120.95,PayPal,Refunded
+398,2025-06-30,2025-06-30 01:58:49,Meta,Tools,3,726.49,2179.4700000000003,PayPal,Pending
