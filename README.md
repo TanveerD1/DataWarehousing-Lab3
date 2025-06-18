@@ -1,11 +1,8 @@
-Let's get your `README.md` updated! I'll incorporate the new Lab 4 details about data transformation, adjust the notebook name to `lab4.ipynb`, and clarify the data setup since `custom_data.csv` is now assumed to be in the repo.
+Here's your updated `README.md` incorporating all the details from your Lab 4 implementation:
 
-Here's the updated `README.md` content:
-
----
-
-# DataWarehousing-Lab3
-# ETL Extract & Transform Lab
+```markdown
+# DataWarehousing-Lab4
+# ETL Pipeline Extension Lab
 
 **Student Name:** [Tanveer Omar]
 
@@ -13,79 +10,139 @@ Here's the updated `README.md` content:
 
 ## Description
 
-This repository contains a Jupyter Notebook (`lab4.ipynb`) demonstrating the fundamental concepts of an ETL (Extract, Transform, Load) pipeline, with a strong focus on **data extraction and transformation**. It specifically implements and showcases:
+This repository contains a Jupyter Notebook (`lab4.ipynb`) demonstrating an extended ETL (Extract, Transform, Load) pipeline with enhanced functionality. The lab builds upon previous ETL concepts with these key features:
 
-1.  **Full Extraction:** Loading the entire dataset at once.
-2.  **Incremental Extraction:** Loading only new or updated records since the last successful extraction.
-3.  **Data Transformation:** Applying various techniques to clean, enrich, and structure the extracted data for analysis.
-    - Use of error handling and functions from Object oriented programming to manage the extraction and transformation processes effectively.
+1. **Dynamic Data Generation:** 
+   - Automatically generates and appends new transactional data to `custom_data.csv`
+   - Simulates realistic e-commerce transactions with timestamps, customer data, and product information
 
-The project utilizes a synthetic sales dataset (`custom_data.csv`) to simulate real-world data scenarios, allowing for practical application of these ETL techniques.
+2. **Dual Extraction Modes:**
+   - **Full Extraction:** Loading the entire dataset
+   - **Incremental Extraction:** Loading only new/updated records since last run using timestamp tracking
+
+3. **Comprehensive Data Transformation:**
+   - Robust cleaning, standardization and enrichment processes
+   - Complete with error handling and logging throughout the pipeline
 
 ---
 
 ## Tools Used
 
-* **Python 3:** The primary programming language.
-* **Pandas:** A powerful data manipulation and analysis library for Python.
-* **Jupyter Notebook:** An interactive computing environment used for developing and presenting the ETL logic.
+* **Python 3:** Core programming language
+* **Pandas:** Data manipulation and analysis
+* **Jupyter Notebook:** Interactive development environment
+* **Datetime:** For timestamp handling and data generation
+* **OS:** For file system operations
 
 ---
 
-## Transformation Techniques Implemented
+## Key Features
 
-The `lab4.ipynb` notebook applies a series of transformations to both the full and incremental datasets to prepare them for analysis:
+### Data Generation System
+- Generates 30+ new records with realistic attributes:
+  - Transaction dates starting from June 1, 2025
+  - Random but realistic customer names (Amazon, Walmart, etc.)
+  - Diverse product categories (Electronics, Home Goods, etc.)
+  - Varied payment methods and statuses
+  - Automatic record ID management
+  - Last updated timestamps for incremental extraction
 
-* **Cleaning:**
-    * **Duplicate Removal:** Identifies and removes duplicate records based on `record_id`.
-    * **Whitespace Stripping:** Removes leading and trailing whitespace from string-based columns (`customer_name`, `product_category`, `payment_method`, `status`).
-    * **Standardized Casing:** Ensures consistency in the `status` column (e.g., "Completed", "Pending", "Cancelled").
-    * **Missing Value Handling:** Drops rows where critical columns (`amount`, `quantity`, `transaction_date`, `transaction_timestamp`) have invalid or missing values after type conversion.
+### Extraction System
+```python
+def get_last_timestamp(file_path):
+    """Smart timestamp retrieval with fallback to minimum datetime"""
+    # Implementation details...
+```
 
-* **Enrichment:**
-    * **Calculated Column (`total_price`):** Adds a new column by multiplying `quantity` and `amount`, providing immediate business value.
+- Maintains state between runs via `last_extraction.txt`
+- Handles first-run scenarios gracefully
+- Provides detailed logging of extraction results
 
-* **Structural:**
-    * **Data Type Conversion:** Converts relevant columns (`transaction_date`, `transaction_timestamp`, `last_updated_timestamp`, `amount`, `quantity`) to their appropriate data types (datetime, numeric).
-    * **Column Selection & Renaming:** Selects a focused set of relevant columns and renames them for better clarity and consistency (e.g., `record_id` to `transaction_id`, `customer_name` to `customer`, `product_category` to `category`, `payment_method` to `payment_type`).
+### Transformation Pipeline
+```python
+def apply_transformations(df):
+    """Comprehensive data cleaning and enrichment"""
+    # Implementation details...
+```
+
+**Processing Steps:**
+1. **Data Cleaning:**
+   - Duplicate removal by record_id
+   - Whitespace stripping from all text fields
+   - Status field standardization (title case)
+   - Null value handling in critical columns
+
+2. **Data Enrichment:**
+   - Calculates `total_price` (quantity × amount)
+   - Proper datetime conversion for all timestamp fields
+   - Numeric type conversion for amount/quantity
+
+3. **Structural Improvements:**
+   - Column renaming for consistency
+   - Selective column retention
+   - Memory-efficient type conversions
 
 ---
 
-## How to Reproduce
+## How to Use
 
-To run this project and observe the ETL processes:
+### Initial Setup
+```bash
+git clone https://github.com/TanveerD1/DataWarehousing-Labs.git
+cd DataWarehousing-Lab3
+pip install pandas jupyter
+```
 
-1.  **Clone the Repository:**
-    ```bash
-    git clone https://github.com/TanveerD1/DataWarehousing-Lab3.git
-    cd DataWarehousing-Lab3
-    ```
-2.  **Ensure Data File Exists:**
-    Make sure the `custom_data.csv` file is present in the root directory of the cloned repository. This file is the source for all extractions.
-    *(Note: This lab assumes `custom_data.csv` is already available and does not include data generation within the notebook.)*
+### Running the Pipeline
+1. Execute all cells in `lab4.ipynb`
+2. The system will:
+   - Generate new data if needed
+   - Perform full extraction and transformation
+   - Perform incremental extraction (if new data exists)
+   - Update the last extraction timestamp
 
-3.  **Set up `last_extraction.txt` (Optional for First Run):**
-    For incremental extraction to work correctly, a `last_extraction.txt` file is used to store the last successful extraction timestamp.
-    * If this is your **first run**, the script will create it.
-    * If you want to simulate a specific past extraction point, you can manually create `last_extraction.txt` with an ISO-formatted timestamp (e.g., `1970-01-01T00:00:00.000000`).
+### Output Files
+- `custom_data.csv`: Master dataset (auto-growing)
+- `transformed_full.csv`: Cleaned full dataset
+- `transformed_incremental.csv`: Cleaned new data only
+- `last_extraction.txt`: Timestamp tracking file
 
-4.  **Install Dependencies:**
-    Make sure you have `pandas` and `jupyter` installed. If not, you can install them using pip:
-    ```bash
-    pip install pandas jupyter
-    ```
+---
 
-5.  **Run the Jupyter Notebook:**
-    Start a Jupyter Notebook server from the project's root directory:
-    ```bash
-    jupyter notebook
-    ```
-    Then, open **`lab4.ipynb`** in your browser and run all cells sequentially to see the full extraction, incremental extraction, and data transformation in action.
+## Transformation Details
+
+### Applied to Both Full and Incremental Data
+1. **Duplicate Handling**  
+   `df.drop_duplicates(subset=['record_id'], keep='first')`
+
+2. **Text Normalization**  
+   `df[col] = df[col].str.strip()` for all string columns
+
+3. **Type Conversions**  
+   - `pd.to_datetime()` for timestamp fields  
+   - `pd.to_numeric()` for amount/quantity
+
+4. **Business Logic**  
+   `df['total_price'] = df['quantity'] * df['amount']`
+
+5. **Column Standardization**  
+   - `record_id` → `transaction_id`  
+   - `customer_name` → `customer`  
+   - etc.
+
+---
+
+## Error Handling
+The pipeline includes comprehensive error handling for:
+- File I/O operations
+- Data type conversions
+- Missing data scenarios
+- Extraction boundary cases
+
+All errors are caught and logged with descriptive messages.
 
 ---
 
 ## Submission Details
-
 This project is submitted as part of the DSA 2040A- LAB 4 US 2025 Take-Home Lab.
-
----
+```
