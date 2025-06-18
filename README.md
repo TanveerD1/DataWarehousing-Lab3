@@ -18,6 +18,7 @@ This repository contains a Jupyter Notebook (`lab4.ipynb`) demonstrating the fun
 1.  **Full Extraction:** Loading the entire dataset at once.
 2.  **Incremental Extraction:** Loading only new or updated records since the last successful extraction.
 3.  **Data Transformation:** Applying various techniques to clean, enrich, and structure the extracted data for analysis.
+    - Use of error handling and functions from Object oriented programming to manage the extraction and transformation processes effectively.
 
 The project utilizes a synthetic sales dataset (`custom_data.csv`) to simulate real-world data scenarios, allowing for practical application of these ETL techniques.
 
